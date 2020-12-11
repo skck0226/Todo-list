@@ -1,9 +1,13 @@
 import react from 'react';
 
 export default function List({item}){
+	const deleteButton = (e)=>{
+		
+	}
 	return(
-		<div>
-			<h4>{item}</h4>
+		<div >
+			<span>{item}</span>
+			<button onClick={deleteButton} className='btn'>delete</button>
 		</div>
 	);	
 }
