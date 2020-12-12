@@ -8,10 +8,10 @@ export default function Maplist(){
 
 	const Map = ()=>{
 		return(
-			list.map((l,id)=>{
+			list.map((l)=>{
 				return(
 					<div className='item'>
-						<List id={id} item={l} />
+						<List id={l.id} item={l.value} />
 					</div>
 				);
 				id++;

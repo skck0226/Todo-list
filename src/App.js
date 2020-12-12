@@ -8,9 +8,14 @@ function App() {
 	const [value,setValue] = useState('');
 	const [list,setList] = useRecoilState(listState);
 	const submit = ()=>{
-		setList(list.concat(value));
+		//list.concat(value)
+		setList(prevItems=>[...prevItems,{
+			id:prevItems.length,
+			value:value
+		}]);
 		setValue('');	
 	}
+
 	return(
 		<div className='App'>
 			<Maplist list={list} />
