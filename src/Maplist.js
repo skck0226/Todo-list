@@ -1,17 +1,20 @@
-import react from 'react';
+import react, {useState} from 'react';
 import List from './List';
+import {useRecoilState, useRecoilValue} from 'recoil';
+import { listState, todoGetter } from './Atoms';
+var id=1;
+export default function Maplist(){
+	const list = useRecoilValue(todoGetter);
 
-export default function Maplist({list}){
-	
 	const Map = ()=>{
-		console.log('MapList->list : '+list)
 		return(
-			list.map((l)=>{
+			list.map((l,id)=>{
 				return(
 					<div className='item'>
-						<List item={l} />
+						<List id={id} item={l} />
 					</div>
 				);
+				id++;
 			})
 		);
 	}
